@@ -3,6 +3,7 @@ package my.study.siwoz.pncore.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -23,11 +24,11 @@ public abstract class BaseEntity implements Serializable {
 	private Long id;
 
 	@Temporal(TemporalType.DATE)
-	// @Column(name = "created", nullable = false, updatable = false)
+	@Column(name = "created", nullable = false, updatable = false)
 	private Date created;
 
 	@Temporal(TemporalType.DATE)
-	// @Column(name = "updated", nullable = false)
+	@Column(name = "updated", nullable = false)
 	private Date updated;
 
 	public Date getCreated() {

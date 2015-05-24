@@ -4,12 +4,14 @@
 package my.study.siwoz.pncore.dao;
 
 import java.io.FileInputStream;
+import java.util.Date;
 import java.util.List;
 
 import my.study.siwoz.pncore.common.repository.BaseRepositoryTest;
 import my.study.siwoz.pncore.entity.HelloWorld;
 
 import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.ReplacementDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.junit.Assert;
 import org.junit.Test;
@@ -34,8 +36,12 @@ public class HelloWorldRepositoryTest extends BaseRepositoryTest {
 	 */
 	@Override
 	protected IDataSet getDataSet() throws Exception {
-		return new FlatXmlDataSetBuilder().build(new FileInputStream(
-				"src/test/resources/dataset/dataset.xml"));
+		IDataSet dataset = new FlatXmlDataSetBuilder()
+				.build(new FileInputStream(
+						"src/test/resources/dataset/dataset.xml"));
+		ReplacementDataSet rDataSet = new ReplacementDataSet(dataset);
+		rDataSet.addReplacementObject("[NOW]", new Date());
+		return rDataSet;
 	}
 
 	@Test

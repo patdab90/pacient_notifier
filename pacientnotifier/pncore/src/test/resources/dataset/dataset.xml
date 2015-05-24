@@ -2,7 +2,8 @@
 
 <dataset>
 
-	<HelloWorld id="1" lastName="premier" firstName="premier" />
-	<HelloWorld id="2" lastName="second" firstName="second" />
-	<UserEntity id="1" lastName="admin" firstName="admin" />
+	<HelloWorld id="1" lastName="premier" firstName="premier"
+		created="[NOW]" updated="[NOW]" />
+	<HelloWorld id="2" lastName="second" firstName="second"
+		created="[NOW]" updated="[NOW]" />
 </dataset>
