@@ -1,11 +1,10 @@
 /**
  *
  */
-package my.study.siwoz.pnweb.application;
+package my.study.siwoz.pncore.service;
 
 import my.study.siwoz.pncore.dao.HelloWorldRepository;
 import my.study.siwoz.pncore.entity.HelloWorld;
-import my.study.siwoz.pncore.service.HelloWorldService;
 
 import org.junit.Assert;
 import org.junit.Test;

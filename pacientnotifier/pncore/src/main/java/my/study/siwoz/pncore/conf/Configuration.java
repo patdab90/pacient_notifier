@@ -1,4 +1,4 @@
-package mu.study.siwoz.pncore.conf;
+package my.study.siwoz.pncore.conf;
 
 import java.beans.PropertyVetoException;
 import java.util.HashMap;
@@ -9,20 +9,29 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.zaxxer.hikari.HikariDataSource;
 
 @org.springframework.context.annotation.Configuration
+@ComponentScan(value = "my.study.siwoz.pncore", excludeFilters = @Filter(type = FilterType.REGEX, pattern = "my.study.siwoz.pncore.spring.Configuration"))
 @PropertySources(value = { @PropertySource(value = "classpath:/conf.properties") })
+@EnableTransactionManagement
+@EnableJpaRepositories("my.study.siwoz.pncore")
 public class Configuration {
+
 	@Autowired
 	private Environment environment;
 
@@ -80,7 +89,7 @@ public class Configuration {
 			DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
 		LocalContainerEntityManagerFactoryBean springEMF = new LocalContainerEntityManagerFactoryBean();
 		springEMF.setDataSource(dataSource);
-		springEMF.setPackagesToScan("my.study.siwoz.pnweb.domain");
+		springEMF.setPackagesToScan("my.study.siwoz.pncore.entity");
 		springEMF.setJpaVendorAdapter(jpaVendorAdapter);
 		Map<String, String> jpaProperties = new HashMap<String, String>();
 		jpaProperties.put("hibernate.dialect",

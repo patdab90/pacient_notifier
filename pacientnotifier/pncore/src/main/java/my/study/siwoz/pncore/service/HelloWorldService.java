@@ -1,15 +1,15 @@
 /**
  *
  */
-package my.study.siwoz.pnweb.application;
+package my.study.siwoz.pncore.service;
+
+import my.study.siwoz.pncore.dao.HelloWorldRepository;
+import my.study.siwoz.pncore.entity.HelloWorld;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import my.study.siwoz.pnweb.domain.HelloWorld;
-import my.study.siwoz.pnweb.domain.HelloWorldRepository;
 
 /**
  * @author jeetemplates

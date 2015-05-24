@@ -9,12 +9,12 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
+import my.study.siwoz.pncore.dao.HelloWorldRepository;
+import my.study.siwoz.pncore.entity.HelloWorld;
+import my.study.siwoz.pncore.service.HelloWorldService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import my.study.siwoz.pnweb.domain.HelloWorld;
-import my.study.siwoz.pnweb.application.HelloWorldService;
-import my.study.siwoz.pnweb.domain.HelloWorldRepository;
 
 /**
  * Welcome controller.
@@ -24,60 +24,62 @@ import my.study.siwoz.pnweb.domain.HelloWorldRepository;
 @ManagedBean
 public class WelcomeController {
 
-    /**
-     * Logger.
-     */
-    private static final Logger logger = LoggerFactory.getLogger(WelcomeController.class);
+	/**
+	 * Logger.
+	 */
+	private static final Logger logger = LoggerFactory
+			.getLogger(WelcomeController.class);
 
-    /* ************************************ */
-    /* Dependencies */
-    /* ************************************ */
-    /**
-     * {@link HelloWorldService}
-     */
-    @ManagedProperty(value = "#{helloWorldService}")
-    private HelloWorldService helloWorldService;
+	/* ************************************ */
+	/* Dependencies */
+	/* ************************************ */
+	/**
+	 * {@link HelloWorldService}
+	 */
+	@ManagedProperty(value = "#{helloWorldService}")
+	private HelloWorldService helloWorldService;
 
-    @ManagedProperty(value = "#{helloWorldRepository}")
-    private HelloWorldRepository helloWorldRepository;
+	@ManagedProperty(value = "#{helloWorldRepository}")
+	private HelloWorldRepository helloWorldRepository;
 
-    /* ************************************ */
-    /* Attributes */
-    /* ************************************ */
-    /**
-     * List of hellos
-     */
-    private List<HelloWorld> hellos;
+	/* ************************************ */
+	/* Attributes */
+	/* ************************************ */
+	/**
+	 * List of hellos
+	 */
+	private List<HelloWorld> hellos;
 
-    /* ************************************ */
-    /* Methods */
-    /* ************************************ */
-    /**
-     * Init.
-     */
-    @PostConstruct
-    public void init() {
-        logger.debug("Initialize hello world list for display");
-        hellos = helloWorldRepository.findAll();
-    }
+	/* ************************************ */
+	/* Methods */
+	/* ************************************ */
+	/**
+	 * Init.
+	 */
+	@PostConstruct
+	public void init() {
+		logger.debug("Initialize hello world list for display");
+		hellos = helloWorldRepository.findAll();
+	}
 
-    /* ************************************ */
-    /* Getters & Setters */
-    /* ************************************ */
-    public void setHelloWorldService(HelloWorldService helloWorldService) {
-        this.helloWorldService = helloWorldService;
-    }
+	/* ************************************ */
+	/* Getters & Setters */
+	/* ************************************ */
+	public void setHelloWorldService(HelloWorldService helloWorldService) {
+		this.helloWorldService = helloWorldService;
+	}
 
-    public void setHelloWorldRepository(HelloWorldRepository helloWorldRepository) {
-        this.helloWorldRepository = helloWorldRepository;
-    }
+	public void setHelloWorldRepository(
+			HelloWorldRepository helloWorldRepository) {
+		this.helloWorldRepository = helloWorldRepository;
+	}
 
-    public List<HelloWorld> getHellos() {
-        return hellos;
-    }
+	public List<HelloWorld> getHellos() {
+		return hellos;
+	}
 
-    public void setHellos(List<HelloWorld> hellos) {
-        this.hellos = hellos;
-    }
+	public void setHellos(List<HelloWorld> hellos) {
+		this.hellos = hellos;
+	}
 
 }

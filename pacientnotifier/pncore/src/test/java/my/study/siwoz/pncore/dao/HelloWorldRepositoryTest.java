@@ -1,14 +1,13 @@
 /**
  *
  */
-package my.study.siwoz.pnweb.infrastructure.persistence;
+package my.study.siwoz.pncore.dao;
 
 import java.io.FileInputStream;
 import java.util.List;
 
-import my.study.siwoz.pncore.dao.HelloWorldRepository;
+import my.study.siwoz.pncore.common.repository.BaseRepositoryTest;
 import my.study.siwoz.pncore.entity.HelloWorld;
-import my.study.siwoz.pnweb.common.repository.BaseRepositoryTest;
 
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
