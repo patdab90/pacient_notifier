@@ -109,23 +109,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Persistence -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-		</dependency>
-
-		<!-- Pooling -->
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-		</dependency>
-
-		<!-- Hypersonic Database -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-		</dependency>
 
 		<!-- Logging -->
 		<dependency>
