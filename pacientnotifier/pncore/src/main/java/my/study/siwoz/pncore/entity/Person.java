@@ -9,6 +9,7 @@ import my.study.siwoz.pncore.entity.enums.Gender;
 
 @MappedSuperclass
 public abstract class Person extends BaseEntity {
+	private static final long serialVersionUID = 7643145469060532558L;
 	@Column(nullable = false)
 	private String firstName;
 	@Column(nullable = false)
@@ -23,7 +24,7 @@ public abstract class Person extends BaseEntity {
 	private String houseNo;
 	@Column(nullable = false)
 	private String flatNo;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	@Column(nullable = false)
 	private String phonenumber;

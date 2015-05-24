@@ -1,20 +1,22 @@
 package my.study.siwoz.pncore.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 import my.study.siwoz.pncore.entity.enums.Media;
 
+@Entity
 public class Message extends BaseEntity {
 
 	private static final long serialVersionUID = -5505549167535359743L;
 
 	@Column(nullable = false)
-	private String from;
+	private String messageFrom;
 
 	@Column(nullable = false)
-	private String to;
+	private String messageTo;
 
 	private String title;
 
@@ -26,7 +28,7 @@ public class Message extends BaseEntity {
 	private Media media;
 
 	public String getFrom() {
-		return from;
+		return messageFrom;
 	}
 
 	public Media getMedia() {
@@ -42,11 +44,11 @@ public class Message extends BaseEntity {
 	}
 
 	public String getTo() {
-		return to;
+		return messageTo;
 	}
 
 	public void setFrom(String from) {
-		this.from = from;
+		this.messageFrom = from;
 	}
 
 	public void setMedia(Media media) {
@@ -62,6 +64,6 @@ public class Message extends BaseEntity {
 	}
 
 	public void setTo(String to) {
-		this.to = to;
+		this.messageTo = to;
 	}
 }

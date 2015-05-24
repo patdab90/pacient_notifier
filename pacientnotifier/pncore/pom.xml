@@ -37,6 +37,11 @@
 			<artifactId>spring-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+
 		<!-- Spring ORM -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -79,7 +84,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
 		<!-- Persistence -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -105,6 +109,11 @@
 			<version>9.1-901-1.jdbc4</version>
 		</dependency>
 
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>

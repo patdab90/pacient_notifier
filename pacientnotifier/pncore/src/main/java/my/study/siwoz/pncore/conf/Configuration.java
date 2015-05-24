@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
@@ -23,13 +24,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.zaxxer.hikari.HikariDataSource;
-
 @org.springframework.context.annotation.Configuration
-@ComponentScan(value = "my.study.siwoz.pncore", excludeFilters = @Filter(type = FilterType.REGEX, pattern = "my.study.siwoz.pncore.spring.Configuration"))
+@ComponentScan(value = "my.study.siwoz.pncore", excludeFilters = @Filter(type = FilterType.REGEX, pattern = "my.study.siwoz.pncore.conf.Configuration"))
 @PropertySources(value = { @PropertySource(value = "classpath:/conf.properties") })
 @EnableTransactionManagement
 @EnableJpaRepositories("my.study.siwoz.pncore")
+@EnableAspectJAutoProxy
 public class Configuration {
 
 	@Autowired

@@ -13,16 +13,15 @@ import javax.faces.context.FacesContext;
 /**
  * Header controller
  * 
- * @author jeetemplates
  */
 @ManagedBean
 @SessionScoped
 public class LocaleBean implements Serializable {
-	
+
 	/**
 	 * Serial UID.
 	 */
-    private static final long serialVersionUID = -7522609234232367231L;
+	private static final long serialVersionUID = -7522609234232367231L;
 
 	/* ************************************ */
 	/* Dependencies */
@@ -35,7 +34,8 @@ public class LocaleBean implements Serializable {
 	/**
 	 * Locale.
 	 */
-	private Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
+	private Locale locale = FacesContext.getCurrentInstance().getViewRoot()
+			.getLocale();
 
 	/* ************************************ */
 	/* Methods */
