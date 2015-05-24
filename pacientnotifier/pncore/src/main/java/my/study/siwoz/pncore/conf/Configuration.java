@@ -62,18 +62,14 @@ public class Configuration {
 	 * @return datasource
 	 * @throws PropertyVetoException
 	 */
-	@Bean(destroyMethod = "close")
+	@Bean
 	public DataSource dataSource() throws PropertyVetoException {
-		HikariDataSource dataSource = new HikariDataSource();
+		org.springframework.jdbc.datasource.DriverManagerDataSource dataSource = new org.springframework.jdbc.datasource.DriverManagerDataSource();
 		dataSource.setDriverClassName(environment
 				.getProperty("jdbc.driverClass"));
-		dataSource.setJdbcUrl(environment.getProperty("jdbc.url"));
+		dataSource.setUrl(environment.getProperty("jdbc.url"));
 		dataSource.setUsername(environment.getProperty("jdbc.user"));
 		dataSource.setPassword(environment.getProperty("jdbc.password"));
-		dataSource.setMinimumIdle(environment.getProperty(
-				"datasource.pool.min_size", Integer.class));
-		dataSource.setMaximumPoolSize(environment.getProperty(
-				"datasource.pool.max_size", Integer.class));
 		return dataSource;
 	}
 

@@ -15,13 +15,9 @@ import org.springframework.core.env.Environment;
 /**
  * Spring configuration.
  *
- * @author jeetemplates
  */
 @org.springframework.context.annotation.Configuration
 @ComponentScan(value = "my.study.siwoz.pnweb", excludeFilters = @Filter(type = FilterType.REGEX, pattern = "my.study.siwoz.pnweb.spring.Configuration"))
-// @EnableTransactionManagement
-// @EnableJpaRepositories("my.study.siwoz.pnweb")
-// @EnableJpaRepositories("my.study.siwoz.pncore.dao")
 @Import(value = { Configuration.class })
 public class BasicConfiguration {
 
