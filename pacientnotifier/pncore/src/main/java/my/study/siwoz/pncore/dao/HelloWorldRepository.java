@@ -7,6 +7,6 @@ import my.study.siwoz.pncore.entity.HelloWorld;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface HelloWorldRepository extends
-		JpaRepository<HelloWorld, Serializable> {
+		JpaRepository<HelloWorld, Serializable>, Serializable {
 
 }

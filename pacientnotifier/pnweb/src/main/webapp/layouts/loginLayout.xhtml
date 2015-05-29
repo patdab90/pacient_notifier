@@ -6,10 +6,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
-<h:body>
-	#{autenticationBean.loggedUser}
-	<ui:composition
-		template="#{autenticationBean.loggedUser !=null ?'/layouts/patientsLayout.xhtml' : '/layouts/loginLayout.xhtml'}">
-	</ui:composition>
-</h:body>
+<ui:composition template="/default.xhtml">
+	<ui:define name="content">
+		<ui:include src="/components/user/login.xhtml" />
+	</ui:define>
+</ui:composition>
 </html>

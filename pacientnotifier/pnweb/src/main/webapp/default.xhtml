@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><h:outputText value="#{i18n['welcome.head.title']}" /></title>
+</h:head>
+<h:body>
+	<h:panelGroup id="header">
+		<ui:insert name="header">
+			<p>HEADER</p>
+		</ui:insert>
+	</h:panelGroup>
+	<h:panelGroup id="content">
+		<ui:insert name="content">
+			<p>DEFAULT</p>
+		</ui:insert>
+	</h:panelGroup>
+	<h:panelGroup id="footer">
+		<ui:insert name="footer">
+			<p>FOOTER</p>
+		</ui:insert>
+	</h:panelGroup>
+</h:body>
+</html>
